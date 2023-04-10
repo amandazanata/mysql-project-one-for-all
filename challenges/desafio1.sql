@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS SpotifyClone;
 
 CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
--- USE SpotifyClone;
+USE SpotifyClone;
 
 -- plano
 CREATE TABLE IF NOT EXISTS plano (
