@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS plano (
     valor DECIMAL(3, 2) NOT NULL
 ) ENGINE = InnoDB;
 
---artista
+-- artista
 CREATE TABLE IF NOT EXISTS artista (
     artista_id INT NOT NULL AUTO_INCREMENT,
     nome_artista VARCHAR(255) NOT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS reproducoes (
     cancao_id INT NOT NULL,
     data_reproducao DATETIME NULL,
     FOREIGN KEY (usuario_id) REFERENCES usuario (usuario_id),
-    FOREIGN KEY (cancao_id) REFERENCES cancao (cancao_id)
+    FOREIGN KEY (cancao_id) REFERENCES musicas (cancao_id)
 ) ENGINE = InnoDB;
 
 -- seguindo
@@ -99,14 +99,14 @@ VALUES
 INSERT INTO musicas (nome_cancao, duracao_segundos, album_id)
 VALUES
     ('BREAK MY SOUL', 279, 1),
-    (`VIRGO'S GROOVE`, 369, 1),
+    ("VIRGO'S GROOVE", 369, 1),
     ('ALIEN SUPERSTAR', 116, 1),
-    (`Don't Stop Me Now`, 203, 2),
+    ("Don't Stop Me Now", 203, 2),
     ('Under Pressure', 152, 3),
     ('Como Nossos Pais', 105, 4),
     ('O Medo de Amar é o Medo de Ser Livre', 207, 5),
     ('Samba em Paris', 267, 6),
-    (`The Bard's Song`, 244, 7),
+    ("The Bard's Song", 244, 7),
     ('Feeling Good', 100, 8);
 
 -- usuario
@@ -123,7 +123,7 @@ VALUES
     ('Judith Butler', 45, '2020-05-13', 4),
     ('Jorge Amado', 58, '2017-02-17', 4);
 
---reproducoes
+-- reproducoes
 INSERT INTO reproducoes (cancao_id, usuario_id, data_reproducao)
 VALUES
     (8, 1, '2022-02-28 10:45:55'),
